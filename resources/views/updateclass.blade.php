@@ -9,14 +9,30 @@
     <title>update</title>
 </head>
 <body>
+    
+    <section class="bg-dark text-light p-5 text-center mb-3">
+
+        <div class="container-xxl">
+            <div class="d-sm-flex justify-content-center">
+                <div>
+                    <h1>En esta pagina puede editar la clase seleccionado </h1>
+
+                    <button class="btn btn-danger" ><a href="{{ url('classCreate') }}" class="nav-link">volver a clases</a> </button>
+                </div>
+            </div>
+        </div>
+    
+    </section>
     <section class="py-3">
         <div class="container-sm bg-info">
             <div class="d-sm-flex justify-content-center">
-                <form action="{{ url('/upload', $class->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/update', $class->id) }}" method="post" enctype="multipart/form-data">
     
                     @csrf
-    
-                    <h3> Editar clase {{ $class->title }}</h3>
+                    <div>
+                    <h3> clase {{ $class->title }}</h3>
+                    
+                    </div>
                     <div class="py-3">
                         <label for="">Titulo</label>
                         <input type="text" name="title" value="{{ $class->title }}" required>
@@ -27,8 +43,17 @@
                         <input type="text" name="price" value="{{ $class->price }}" required> 
                     </div>
                     <div class="py-3">
-                        <label for="">Descripcion</label>
-                        <textarea type="textarea" name="description" rows="5"  value="{{ $class->description }}" required></textarea>
+                        <label for="">horario</label>
+                        {{-- Type change to num? --}}
+                        <input type="text" name="timetable" value="{{ $class->timetable }}" required> 
+                    </div>
+                    <div class="py-3">
+                        <label for="">Descripcion corta</label>
+                        <textarea type="textarea" name="description" rows="5"  required> {{ $class->description }}"</textarea>
+                    </div>
+                    <div class="py-3">
+                        <label for="">Descripcion larga</label>
+                        <textarea type="textarea" name="descriptionshow" rows="5"  required> {{ $class->descriptionshow }}"</textarea>
                     </div>
                     <div class="py-3">
                         <label>imagen antiguo</label>

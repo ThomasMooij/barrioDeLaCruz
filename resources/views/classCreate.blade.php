@@ -59,7 +59,7 @@
     @forelse($classes as $class)
     <tr align="center">
         <td> <p>{{ $class->title }}</p></td>
-        <td> <button><a href="{{ url('/updateclass', $class->id) }}">editar</a></button></td>
+        <td> <button><a href="{{ url('/updateview', $class->id) }}">editar</a></button></td>
         <td> <button onclick= "return confirm('Esta seguro que quiere borrar esta clase?')"><a href="{{ url('/deleteclass', $class->id) }}">Borrar</a></button></td>
         
 
@@ -92,12 +92,21 @@
                     <input type="text" name="price" placeholder="Si la clase es gratis escriba: Gratis" required> 
                 </div>
                 <div class="py-3">
-                    <label>image</label>
-                    <input type="file" name="image" required>
+                    <label for="">Horiario</label>
+                    {{-- Type change to num? --}}
+                    <input type="text" name="timetable" placeholder="Anade los dias y las horas de la clase" required> 
                 </div>
                 <div class="py-3">
-                    <label for="">Descripcion</label>
+                    <label>imagen principal</label>
+                    <input type="file" name="image" accept="image/jpeg , image/png , image/jpg" required>
+                </div>
+                <div class="py-3">
+                    <label for="">Descripcion corta</label>
                     <textarea type="textarea" name="description" rows="5" placeholder="Aproveche de proveer informacion sobre la clase" required></textarea>
+                </div>
+                <div class="py-3">
+                    <label for="">Descripcion larga</label>
+                    <textarea type="textarea" name="descriptionshow" rows="5" placeholder="Aproveche de proveer informacion sobre la clase" required></textarea>
                 </div>
                 <div>
                     <input class="btn btn-primary"type="submit" value="guardar">

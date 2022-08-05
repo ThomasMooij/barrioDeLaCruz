@@ -17,8 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('timetable')->nullable();
             $table->string('price')->nullable();
             $table->longText('description')->nullable();
+            $table->longText('descriptionshow')->nullable();
             $table->timestamps();
         });
     }

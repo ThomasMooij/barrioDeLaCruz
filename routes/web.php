@@ -21,19 +21,23 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class,"class","events"]);
 
+Route::get('/register', [HomeController::class,"register"]);
+
 Route::get('/redirects', [AdminController::class, "index"]);
+
+Route::get('/reservation/{id}', [AdminController::class, "reservation"]);
 
 Route::get('/login', [AdminController::class, "login"]);
 
 Route::get('/deleteclass/{id}', [AdminController::class, "deleteclass"]);
 
-Route::get('/updateclass/{id}', [AdminController::class, "updateclass"]);
+Route::get('/updateview/{id}', [AdminController::class, "updateview"]);
 
 Route::post('/update/{id}', [AdminController::class, "update"]);
 
 Route::get('/classCreate', [AdminController::class, "classCreate"]);
 
-Route::get('/classShow', [AdminController::class, "classShow"]);
+Route::get('/classShow/{id}', [AdminController::class, "classShow"]);
 
 Route::post('/uploadClass',[AdminController::class, "upload"]);
 

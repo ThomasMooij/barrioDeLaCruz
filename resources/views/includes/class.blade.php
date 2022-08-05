@@ -23,7 +23,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ $class->title }}</h5>
                       <p class="card-text">{{ Str::limit($class->description , 50) }}</p>
-                      <a href="/classShow" class="btn btn-primary">Ver detalles de la clase</a>
+                      <a href="/classShow/{{ $class->id }}" class="btn btn-primary">Ver detalles de la clase</a>
                     </div>
                 </div>
             </div>

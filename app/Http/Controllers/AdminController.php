@@ -26,8 +26,9 @@ class AdminController extends Controller
     }
     }
 
-    public function classShow(){
-        return view("classShow");
+    public function classShow($id){
+        $class=Clas::find($id);
+        return view("classShow")->with('class',$class);
     }
 
     public function classCreate(){
@@ -40,12 +41,36 @@ class AdminController extends Controller
         $class->delete();
         return redirect()->back();
     }
+
+    public function update(Request $request , $id){
+        $data = Clas::find($id);
+
+        $image= $request->image;
+        $imagename = time(). '.' .$image->getClientOriginalExtension(); //create nickname for image (OriginalName better?)
+        $request->image->move('classimages' , $imagename); // save image in classimages folder
+
+        $data->image= $imagename;
+        $data->title= $request->title;
+        $data->price= $request->price;
+        $data->description= $request->description;
+        $data->descriptionshow= $request->descriptionshow;
+        $data->timetable= $request->description;
+        $data->save();
+        return redirect()->back();
+    }
+
     
-    public function updateclass($id){
+    public function updateview($id){
         $class=Clas::find($id);
         return view('updateclass')->with('class', $class);
         
     }
+
+    public function reservation($id){
+        $class = Clas::find($id);
+        return view('reservation')->with('class',$class);
+    
+        }
 
     public function upload(Request $request){
         $data = new Clas();
@@ -57,10 +82,13 @@ class AdminController extends Controller
         $data->image= $imagename;
         $data->title= $request->title;
         $data->price= $request->price;
+        $data->timetable= $request->timetable;
+        $data->descriptionshow= $request->descriptionshow;
         $data->description= $request->description;
 
         $data->save();
         return redirect()->back();
 
     }
+
 }

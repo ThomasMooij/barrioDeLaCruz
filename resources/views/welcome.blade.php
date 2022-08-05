@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-5">
-                        <a href="#classes" class="nav-link">Classes</a>
+                        <a href="#classes" class="nav-link">Clases</a>
                     </li>
                     <ul class="navbar-nav">
                         <li class="nav-item mx-5">
@@ -49,7 +49,7 @@
         <div class="d-sm-flex justify-content-center">
             <div>
                 <h1>Sobre nosotros</h1>
-                <p class="lead">Nos dedicamos a dar clases economicos y organizar eventos en el barrio para tod@s</p>
+                <p class="lead">Nos dedicamos a dar clases economicas y organizar eventos en el barrio para tod@s</p>
             </div>
         </div>
     </div>
