@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <title>front end bootcamp</title>
+    <title>La Cruz</title>
+    
 </head>
-<body>
+<body class="bg-light">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
         <div class="container">
@@ -47,78 +49,40 @@
         <div class="d-sm-flex justify-content-center">
             <div>
                 <h1>Sobre nosotros</h1>
-                <p class="lead">Nos dedicamos a dar clases economicos y organizar eventos en el barrio para todos</p>
+                <p class="lead">Nos dedicamos a dar clases economicos y organizar eventos en el barrio para tod@s</p>
             </div>
         </div>
     </div>
 
 </section>
 
-    <!-- about -->
-
     <!-- classes -->
-
+    <div class="container-xxl">
     <section class="bg-dark text-light py-3" >
-        <div class="container-xxl">
+        
             <div class="d-sm-flex justify-content-evenly">
                 <h3 class="mb-5 mb-md-0"> Nuestras classes</h3>
                 <p class="lead">Apuntate ya !</p>
             </div>
-        </div>
-
+        
+    
     </section>
+</div>
 
-        <section class="p-5" id="classes">
-            <div class="container">
-                <div class="row text-center">
-                    <!-- card1 -->
-                    <div class="col-md">
-                        <div class="card" style="width: 18rem;">
-                            <img src="img/grana.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <!-- card2 -->
-                    <div class="col-md">
-                        <div class="card" style="width: 18rem;">
-                            <img src="img/grana.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <!-- card3 -->
-                    <div class="col-md">
-                        <div class="card bg-light text-dark" style="width: 18rem;">
-                            <img src="img/grana.png" class="card-img-top mt-3" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-    <!-- end classes -->
+    @include("includes.class")
+  
 
     <!-- events -->
+<div class="container-xxl">
   <section class="bg-dark text-light p-4">
-        <div class="container-xxl">
-            <div class="d-sm-flex justify-content-center">
+        
+            <div class="d-sm-flex justify-content-evenly">
                 <h3 class="mb-5 mb-md-0"> Nuestros eventos</h3>
+                <p class="lead">Guarda la fecha!</p>
             </div>
-        </div>
-
     </section>
+</div>
 
     <section class="p-5" id="events">
         <div class="container">
@@ -168,16 +132,14 @@
     <!-- events end -->
 
     <!-- contact -->
-
+<div class="container-xxl">
     <section class="bg-dark text-light p-4">
-        <div class="container-xxl">
+        
             <div class="d-sm-flex justify-content-center">
                 <h3 class="mb-5 mb-md-0"> Pongase en contacto con nosotros!</h3>
             </div>
-        </div>
-
     </section>
-
+</div>
 
     <section class="p-3" id="contact">
         <div class="container w-50">

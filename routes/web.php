@@ -1,6 +1,12 @@
 <?php
 
+use App\Models\Clas;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,"class","events"]);
+
+Route::get('/redirects', [AdminController::class, "index"]);
+
+Route::get('/login', [AdminController::class, "login"]);
+
+Route::get('/deleteclass/{id}', [AdminController::class, "deleteclass"]);
+
+Route::get('/updateclass/{id}', [AdminController::class, "updateclass"]);
+
+Route::post('/update/{id}', [AdminController::class, "update"]);
+
+Route::get('/classCreate', [AdminController::class, "classCreate"]);
+
+Route::get('/classShow', [AdminController::class, "classShow"]);
+
+Route::post('/uploadClass',[AdminController::class, "upload"]);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+ 
