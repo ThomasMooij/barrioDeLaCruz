@@ -16,8 +16,11 @@
                 <div class="form-items">
                     <h3>Formulario de registracion {{ $class->title }}</h3>
                     
-                    <form class="requires-validation" novalidate>
+                    {{ $limit }}
 
+                    <form class="requires-validation" method="POST" action={{ url("/classreg", $class->id) }} enctype="multipart/form-data" novalidate>
+
+                      @csrf 
                         <div class="col-md-12">
                            <input class="form-control" type="text" name="name" placeholder="Su nombre completo" required>
                            <div class="invalid-feedback">Este campo es obligatorio</div>
@@ -29,7 +32,7 @@
                         </div>
 
                         <div class="col-md-12">
-                          <input class="form-control" type="email" name="email" placeholder="Su numero de telefono" required>
+                          <input class="form-control" type="phone" name="phone" placeholder="Su numero de telefono" required>
                            <div class="invalid-feedback">Este campo es obligatorio</div>
                       </div>
 
@@ -39,6 +42,7 @@
                      <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
                     </div>
               
+                      <input type="text" value="{{ $class->title }}" name="class" hidden>
 
                         <div class="form-button mt-3">
                             <button id="submit" type="submit" class="btn btn-primary">Register</button>

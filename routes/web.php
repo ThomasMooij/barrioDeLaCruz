@@ -21,6 +21,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class,"class","events"]);
 
+Route::post('/classreg/{id}', [HomeController::class, "classreg"]);
+
 Route::get('/register', [HomeController::class,"register"]);
 
 Route::get('/redirects', [AdminController::class, "index"]);

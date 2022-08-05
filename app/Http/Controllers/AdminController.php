@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Clas;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -68,7 +69,8 @@ class AdminController extends Controller
 
     public function reservation($id){
         $class = Clas::find($id);
-        return view('reservation')->with('class',$class);
+        $limit = Reservation::where('id')->count();
+        return view('reservation')->with('class',$class, 'limit',$limit);
     
         }
 
