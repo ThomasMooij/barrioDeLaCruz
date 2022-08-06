@@ -25,9 +25,9 @@ Route::post('/classreg/{id}', [HomeController::class, "classreg"]);
 
 Route::get('/register', [HomeController::class,"register"]);
 
-Route::get('/redirects', [AdminController::class, "index"]);
+Route::get('/reservation/{id}', [HomeController::class, "reservation"]);
 
-Route::get('/reservation/{id}', [AdminController::class, "reservation"]);
+Route::get('/redirects', [AdminController::class, "index"]);
 
 Route::get('/login', [AdminController::class, "login"]);
 

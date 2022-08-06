@@ -67,16 +67,9 @@ class AdminController extends Controller
         
     }
 
-    public function reservation($id){
-        $class = Clas::find($id);
-        $limit = Reservation::where('id')->count();
-        return view('reservation')->with('class',$class, 'limit',$limit);
-    
-        }
 
     public function upload(Request $request){
         $data = new Clas();
-
         $image= $request->image;
         $imagename = time(). '.' .$image->getClientOriginalExtension(); //create nickname for image (OriginalName better?)
         $request->image->move('classimages' , $imagename); // save image in classimages folder

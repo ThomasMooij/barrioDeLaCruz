@@ -14,9 +14,16 @@ class HomeController extends Controller
         $classes = DB::table('clas')->paginate(3);
         return view('welcome')->with('classes',$classes);
     }
+
+    public function reservation($id){
+        $class = Clas::find($id);
+        $limit = Reservation::all()->count(); // limit variable to limit number of possible reservations (not working)
+        return view('reservation')->with('class',$class)->with('limit',$limit);
+    
+        }
     public function classreg(Request $request ,$id){
 
-        $data = Reservation::all();
+        $data = new Reservation();
 
         $data->name = $request->name;
         $data->email = $request->email;
