@@ -17,7 +17,7 @@
             <div class="form-content">
                 <div class="form-items">
 
-    <h1 class="text-light"> No quedan plazas, lo sentimos!</h1>
+    <h1 class="text-light"> No quedan plazas esta semana, lo sentimos!</h1>
           </div>
       </div>
     </div>

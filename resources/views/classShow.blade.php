@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-5">
-                            <a href="{{ asset('reserve') }}" class="nav-link">volver a pagina principal</a>
+                            <a href="{{ asset('/') }}" class="nav-link">volver a pagina principal</a>
                         </li>
                             
                         </ul>
@@ -34,7 +34,7 @@
         </nav>
         <!-- navbar end -->
     
-        <!-- About -->
+        <!-- header -->
     <section class="bg-dark text-light p-5 text-center mb-3">
     
         <div class="container-xxl">
@@ -48,7 +48,7 @@
     
     </section>
 
-{{-- Images slider --}}
+
 
 <section>
 

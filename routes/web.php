@@ -29,9 +29,15 @@ Route::get('/reservation/{id}', [HomeController::class, "reservation"]);
 
 Route::get('/redirects', [AdminController::class, "index"]);
 
+Route::get('/adminReserve', [AdminController::class, "adminReserve"]);
+
 Route::get('/login', [AdminController::class, "login"]);
 
 Route::get('/deleteclass/{id}', [AdminController::class, "deleteclass"]);
+
+Route::get('/deletereserve/{id}', [AdminController::class, "deletereserve"]);
+
+Route::get('/deletereserveall', [AdminController::class, "deletereserveall"]);
 
 Route::get('/updateview/{id}', [AdminController::class, "updateview"]);
 
@@ -42,6 +48,10 @@ Route::get('/classCreate', [AdminController::class, "classCreate"]);
 Route::get('/classShow/{id}', [AdminController::class, "classShow"]);
 
 Route::post('/uploadClass',[AdminController::class, "upload"]);
+
+Route::get('/success', function () {
+    return view('success');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

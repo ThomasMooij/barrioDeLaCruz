@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Clas;
+use App\Models\old_reservations;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +43,16 @@ class AdminController extends Controller
         $class->delete();
         return redirect()->back();
     }
+    
+    public function deletereserve($id){
+        $reserve=Reservation::find($id);
+        $reserve->delete();
+        return redirect()->back();
+    }
+    public function deletereserveall(){
+        DB::table('reservations')->delete();;
+        return redirect()->back();
+    }
 
     public function update(Request $request , $id){
         $data = Clas::find($id);
@@ -66,6 +77,12 @@ class AdminController extends Controller
         return view('updateclass')->with('class', $class);
         
     }
+
+    public function adminReserve(){
+        $reserve=Reservation::all();
+        $old_reserve=old_reservations::all();
+        return view("adminReserve")->with('reserve' , $reserve)->with('old_reserve',$old_reserve);
+        }
 
 
     public function upload(Request $request){
