@@ -17,8 +17,9 @@ class HomeController extends Controller
 
     public function reservation($id){
         $class = Clas::find($id);
-        $limit = Reservation::all()->count(); // limit variable to limit number of possible reservations (not working)
-        return view('reservation')->with('class',$class)->with('limit',$limit);
+        $limit = DB::table('reservations')->where('class' , $class->title)->get();
+        $limitCount= $limit->count(); // limit variable to limit number of possible reservations (not working)
+        return view('reservation')->with('class',$class)->with('limitCount',$limitCount);
     
         }
     public function classreg(Request $request ,$id){
@@ -31,7 +32,7 @@ class HomeController extends Controller
         $data->class = $request->class;
 
         $data->save();
-        return redirect()->back();
+        return redirect('/');
     }
 }
 

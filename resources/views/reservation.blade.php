@@ -9,18 +9,27 @@
   <script src="{{ url("reserve.js") }}" defer></script>
 </head>
 <body>
+
+  @if($limitCount > 2){
   <div class="form-body">
     <div class="row">
         <div class="form-holder">
             <div class="form-content">
                 <div class="form-items">
+
+    <h1 class="text-light"> No quedan plazas, lo sentimos!</h1>
+          </div>
+      </div>
+    </div>
+</div>
+} @else {
+  <div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                  
                     <h3>Formulario de registracion {{ $class->title }}</h3>
-
-                    @if($limit >= 15){
-
-                        <P> No quedan plazas, lo sentimos!</P>
-
-                    } @else {
 
                     <form class="requires-validation" method="POST" action={{ url("/classreg", $class->id) }} enctype="multipart/form-data" novalidate>
 
@@ -54,15 +63,14 @@
                         <div class="form-button mt-3">
                           <button class="btn btn-primary"><a class="text-light" style="text-decoration: none;"  href="/">Volver a pagina principal</a></button>
                       </div>
-                    </form>
-                  }
-                  @endif
+                    </form> 
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+}
+@endif
     
 </body>
 </html>
